@@ -37,7 +37,7 @@ int main()
 		}
     }
 
-    for (int i = 0; i < 16; i++) std::cout << Genetic::test(res[0], false, 1) << " ";
+    for (int i = 0; i < 64; i++) std::cout << Genetic::test(res[0], false, 1) << " ";
     std::cout << "\n" << res[0].toString() << "\n";
 
     return 0;
