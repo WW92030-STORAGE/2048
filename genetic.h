@@ -290,7 +290,7 @@ long long test(AI2048 ai, bool verbose = false, int numGames = 3) {
 	totalscore += game.score;
 	if (game.gameCleared()) {
         totalscore += ai.INF;
-        std::cout << "CLEARED";
+        // std::cout << "CLEARED";
 	}
     }
 	return totalscore;
@@ -300,7 +300,7 @@ std::vector<AI2048> tournament(std::vector<AI2048> v, int k, bool verbose = true
     std::vector<std::pair<long long, AI2048>> rank;
     for (auto i : v) {
         rank.push_back({-1 * test(i), AI2048(i)});
-        if (verbose) std::cout << "X\n";
+        if (verbose) std::cout << "X";
     }
     std::cout << "\n";
     
