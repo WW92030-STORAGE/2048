@@ -10,6 +10,7 @@ class Game2048 {
     public:
     std::vector<std::vector<int>> board;
     int score = 0;
+    double prob4 = 0.1; // Probability that a random placed tile is a 4
     
     Game2048() {
         board = std::vector<std::vector<int>>(4, std::vector<int>(4, 0));
@@ -47,7 +48,7 @@ class Game2048 {
     }
     
     bool placeRandom() {
-        int value = (rand() % 2 == 0) ? 2 : 4; // Value of the tile
+        int value = (((double)(rand()) / RAND_MAX) > prob4) ? 2 : 4; // Value of the tile
         
         std::vector<std::pair<int, int>> v;
         for (int i = 0; i < 4; i++) {
